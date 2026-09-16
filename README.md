@@ -1,14 +1,21 @@
-# OhMochi Legal Hub
+# OhMochi Legal & Privacy Center
 
-Pusat dokumen legal untuk aplikasi-aplikasi OhMochi.
+Pusat dokumen hukum untuk pengguna aplikasi OhMochi.
 
 Halaman utama: https://ohmochi-page.github.io/
 
-## Isi
-Setiap aplikasi memiliki folder `-Legal` yang berisi:
-- `privacy-policy.html` - Kebijakan Privasi
-- `terms-of-service.html` - Ketentuan Layanan
-- `delete-account.html` - Penghapusan Akun & Data
+## 📱 TradeCheck Pro
+
+- [Kebijakan Privasi](https://ohmochi-page.github.io/TradeCheck-Pro-Legal/privacy-policy.html)
+- [Ketentuan Layanan](https://ohmochi-page.github.io/TradeCheck-Pro-Legal/terms-of-service.html)
+- [Penghapusan Akun & Data](https://ohmochi-page.github.io/TradeCheck-Pro-Legal/delete-account.html)
+
+## 📱 XAUUSD Lot Calculator
+
+- [Kebijakan Privasi](https://ohmochi-page.github.io/XAUUSD-Lot-Calculator-Legal/privacy-policy.html)
+- [Ketentuan Layanan](https://ohmochi-page.github.io/XAUUSD-Lot-Calculator-Legal/terms-of-service.html)
+- [Penghapusan Akun & Data](https://ohmochi-page.github.io/XAUUSD-Lot-Calculator-Legal/delete-account.html)
 
 ## Kontak
-Untuk pertanyaan terkait privasi dan penghapusan data, silakan merujuk ke kontak yang tercantum di masing-masing dokumen.
+
+Hubungi kami: ohmochisukabumi@gmail.com
