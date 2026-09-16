@@ -65,9 +65,7 @@
             font-weight: 600;
             margin-top: 0;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            text-transform: capitalize;
         }
 
         .links-grid {
@@ -104,6 +102,11 @@
             transform: translateX(4px);
         }
 
+        .loading-text {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
         footer {
             text-align: center;
             margin-top: 40px;
@@ -120,48 +123,76 @@
         <p>Pusat informasi dokumen hukum, privasi, dan ketentuan layanan aplikasi mobile.</p>
     </header>
 
-    <!-- Aplikasi 1 -->
-    <div class="app-card">
-        <div class="app-title">📊 TradeCheck Pro</div>
-        <div class="links-grid">
-            <a class="legal-link" href="/TradeCheck-Pro-Legal/privacy-policy.html">
-                <span>Kebijakan Privasi (Privacy Policy)</span>
-                <span class="arrow">➡️</span>
-            </a>
-            <a class="legal-link" href="/TradeCheck-Pro-Legal/terms-of-service.html">
-                <span>Ketentuan Layanan (Terms of Service)</span>
-                <span class="arrow">➡️</span>
-            </a>
-            <a class="legal-link" href="/TradeCheck-Pro-Legal/delete-account.html">
-                <span>Penghapusan Data (Delete Account)</span>
-                <span class="arrow">➡️</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Aplikasi 2 -->
-    <div class="app-card">
-        <div class="app-title">📈 XAUUSD Lot Calculator</div>
-        <div class="links-grid">
-            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/privacy-policy.html">
-                <span>Kebijakan Privasi (Privacy Policy)</span>
-                <span class="arrow">➡️</span>
-            </a>
-            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/tos.html">
-                <span>Ketentuan Layanan (Terms of Service)</span>
-                <span class="arrow">➡️</span>
-            </a>
-            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/delete-account.html">
-                <span>Penghapusan Data (Delete Account)</span>
-                <span class="arrow">➡️</span>
-            </a>
-        </div>
+    <!-- Konten Aplikasi akan Dimasukkan Secara Otomatis di Sini -->
+    <div id="apps-container">
+        <p class="loading-text">Memuat daftar aplikasi...</p>
     </div>
 
     <footer>
         <p>&copy; 2026 OhMochi. Hak Cipta Dilindungi.<br>Hubungi kami: ohmochisukabumi@gmail.com</p>
     </footer>
 </div>
+
+<script>
+    // Konfigurasi Akun GitHub Anda
+    const username = "ohmochi-page";
+    const repo = "ohmochi-page.github.io";
+
+    async function loadApps() {
+        const container = document.getElementById('apps-container');
+        try {
+            // Memanggil GitHub API untuk membaca isi root folder repositori
+            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/`);
+            const items = await response.json();
+            
+            // Saring hanya item yang berbentuk FOLDER dan berakhiran '-Legal'
+            const legalFolders = items.filter(item => item.type === 'dir' && item.name.endsWith('-Legal'));
+
+            if (legalFolders.length === 0) {
+                container.innerHTML = '<p class="loading-text">Belum ada dokumen aplikasi yang diunggah.</p>';
+                return;
+            }
+
+            container.innerHTML = ''; // Hapus teks loading
+
+            // Lakukan looping untuk setiap folder aplikasi yang ditemukan
+            legalFolders.forEach(folder => {
+                // Ubah nama folder menjadi Nama Aplikasi yang rapi (Contoh: "TradeCheck-Pro-Legal" -> "TradeCheck Pro")
+                const appName = folder.name.replace('-Legal', '').replace(/-/g, ' ');
+                const folderPath = folder.name;
+
+                // Template Kartu HTML Otomatis
+                const cardHTML = `
+                    <div class="app-card">
+                        <div class="app-title">📱 ${appName}</div>
+                        <div class="links-grid">
+                            <a class="legal-link" href="/${folderPath}/privacy-policy.html">
+                                <span>Kebijakan Privasi (Privacy Policy)</span>
+                                <span class="arrow">➡️</span>
+                            </a>
+                            <a class="legal-link" href="/${folderPath}/terms-of-service.html">
+                                <span>Ketentuan Layanan (Terms of Service)</span>
+                                <span class="arrow">➡️</span>
+                            </a>
+                            <a class="legal-link" href="/${folderPath}/delete-account.html">
+                                <span>Penghapusan Data (Delete Account)</span>
+                                <span class="arrow">➡️</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            });
+
+        } catch (error) {
+            console.error('Gagal memuat repositori:', error);
+            container.innerHTML = '<p class="loading-text" style="color: #ef4444;">Gagal memuat daftar aplikasi otomatis.</p>';
+        }
+    }
+
+    // Jalankan fungsi saat halaman dibuka
+    loadApps();
+</script>
 
 </body>
 </html>
