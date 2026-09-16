@@ -28,8 +28,10 @@
 <h2 style="text-align: left;">4. Account and Access</h2>
 
 <ul style="text-align: left;">
-  <li>No account registration is required to use the basic features.</li>
+  <li>No account registration is required to use the basic features as guest. Guest data stays only on your device.</li>
+  <li><b>Optional Google Sign-In:</b> you may sign in with Google to enable cloud backup &amp; sync (dzikir, counts, theme, preferences) across your devices via Firebase. Signing in is voluntary.</li>
   <li>Google Play account is required only for premium feature purchases.</li>
+  <li>You are responsible for maintaining the security of your Google account. You may sign out or permanently delete your account at any time via <b>Account</b> in the App.</li>
   <li>The Service is currently available on Android devices and will be developed for iOS in the future.</li>
 </ul>
 
@@ -38,16 +40,17 @@
 <p>We are committed to protecting your privacy. Our data collection practices include:</p>
 
 <ul style="text-align: left;">
-  <li><b>Personal Information:</b> We do not collect sensitive personal data. We collect App User ID, subscription history, transaction information through RevenueCat for payment management, and <b>age verification data through Google Play Age Signals API for compliance with applicable laws (e.g., Texas SB 2420)</b>.</li>
+  <li><b>Personal Information:</b> Guest mode collects no personal data. If you sign in with Google, we process your name, email, profile photo, and UID via Firebase Authentication, plus your backup data (dzikir list, counts, theme, preferences) via Cloud Firestore. We also collect App User ID, subscription history, transaction information through RevenueCat for payment management, and <b>age verification data through Google Play Age Signals API for compliance with applicable laws (e.g., Texas SB 2420)</b>.</li>
   <li><b>Third-Party Services:</b></li>
 </ul>
 
-<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><b>a.&nbsp;</b><b>RevenueCat:</b> Manages subscription data and payment processing</p>
-<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp; &nbsp; <b>b.&nbsp;</b><b>Unity Ads:</b> Collects usage data for monetization purposes</span></p>
-<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><b>c. Google Play:</b> Processes in-app purchases <b>and provides age signals for legal compliance</b></p>
+<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><b>a.&nbsp;</b><b>Firebase (Google):</b> Google Sign-In authentication and Cloud Firestore backup/sync</p>
+<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><b>b.&nbsp;</b><b>RevenueCat:</b> Manages subscription data and payment processing</p>
+<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp; &nbsp; <b>c.&nbsp;</b><b>Unity Ads:</b> Collects usage data for monetization purposes</span></p>
+<p><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><span>&nbsp;&nbsp; &nbsp;</span><b>d. Google Play:</b> Processes in-app purchases <b>and provides age signals for legal compliance</b></p>
 
 <ul style="text-align: left;">
-  <li><b>User Data:</b> Dzikir counts, targets, and preferences are processed locally on your device and are not uploaded to our servers.</li>
+  <li><b>User Data:</b> Dzikir counts, targets, and preferences are stored locally on your device. If you sign in, they are additionally backed up to Cloud Firestore (<b>users/{uid}</b>) to enable sync across your own devices.</li>
 </ul>
 
 <p>Please refer to our <a href="https://ohmochi-page.github.io/Digital-Tasbih-Counter-Pro-Legal/privacy-policy.html"><b>Privacy Policy</b></a> for more detailed information about our data practices.</p>
@@ -98,9 +101,11 @@
 <p>Our Service integrates with third-party services:</p>
 
 <ul style="text-align: left;">
+  <li><b>Firebase (Google):</b> Authentication and Cloud Firestore backup/sync</li>
   <li><b>RevenueCat:</b> Subscription management</li>
   <li><b>Unity Ads:</b> Advertisement services</li>
   <li><b>Google Play:</b> Payment processing and age verification signals</li>
+  <li><b>Google Sign-In:</b> Optional login provider</li>
 </ul>
 
 <p>We are not responsible for the practices or content of these third-party services. Please review their respective terms and privacy policies.</p>

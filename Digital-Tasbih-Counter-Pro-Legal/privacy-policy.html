@@ -6,22 +6,26 @@
 
 <h2 style="text-align: left;">1. Information We Collect</h2>
 
-<p>Digital Tasbih Counter Pro does <b>not</b> collect any personal or sensitive information.</p>
+<p>Digital Tasbih Counter Pro can be used as a <b>guest without login</b>. In guest mode we do <b>not</b> collect any personal information — your counts and preferences stay only on your device.</p>
 
-<p>We only process limited technical, subscription-related, and compliance data:</p>
+<p>If you choose to <b>sign in with Google</b> for cloud backup &amp; sync, we process the following through Firebase:</p>
 
 <ul style="text-align: left;">
+  <li><b>Google account info</b> – name, email address, and profile photo (provided by Google Sign-In via Firebase Authentication) to identify your account.</li>
+  <li><b>Cloud backup data</b> – dzikir list, counter values, selected dzikir, theme, and app preferences (sound, vibration, night mode, etc.) stored in Cloud Firestore under <b>users/{uid}</b> to sync across your devices.</li>
   <li><b>App User ID</b> – generated automatically to identify your device session.</li>
   <li><b>Subscription and purchase status</b> – used to manage premium features through RevenueCat.</li>
   <li><b>Advertising data</b> – automatically collected by Unity Ads to show ads and measure ad performance.</li>
   <li><b>Age verification data</b> – obtained from Google Play Age Signals API (for users in regions with age verification laws, such as Texas, USA). This data includes age range information and verification status to help us comply with legal requirements.</li>
 </ul>
 
-<p>No email, password, contact list, or precise location is collected.</p>
+<p>No password, contact list, or precise location is collected. We never access your Google password.</p>
 
 <h2 style="text-align: left;">2. How Data Is Used</h2>
 
 <ul style="text-align: left;">
+  <li>Firebase Authentication uses your Google account info to sign you in and secure your cloud backup.</li>
+  <li>Cloud Firestore uses your backup data (dzikir, counts, theme, preferences) solely to restore and sync your data across your own devices. Local-first: the app works offline and syncs only when you are signed in and online.</li>
   <li>RevenueCat uses subscription data to confirm active plans and manage purchases.</li>
   <li>Unity Ads uses anonymous data to deliver personalized or contextual ads.</li>
   <li>Google Play Age Signals API provides age range information to ensure compliance with applicable age verification laws (e.g., Texas SB 2420).</li>
@@ -31,9 +35,10 @@
 
 <h2 style="text-align: left;">3. Data Storage and Processing</h2>
 
-<p>All data is stored and processed by the third-party providers listed above:</p>
+<p>Guest data is stored <b>only on your device</b> (SharedPreferences). Signed-in account data is stored in the cloud as described below:</p>
 
 <ul style="text-align: left;">
+  <li><b>Google LLC (Firebase Authentication &amp; Cloud Firestore)</b> – for Google Sign-In and cloud backup/sync of your dzikir data. Data is stored under <b>users/{uid}</b> and protected by rules so only you can read/write it.</li>
   <li><b>RevenueCat, Inc.</b> – for managing in-app purchases and subscriptions.</li>
   <li><b>Unity Technologies</b> – for ad delivery and analytics.</li>
   <li><b>Google Play (Google LLC)</b> – provides age signals through the Play Age Signals API for compliance purposes.</li>
@@ -46,7 +51,8 @@
 <p>We encourage you to review the privacy policies of these third-party service providers, as they are not governed by this Privacy Policy:</p>
 
 <ul style="text-align: left;">
-  <li><a href="https://policies.google.com/privacy" rel="nofollow" target="_blank">Google Play Privacy Policy</a></li>
+  <li><a href="https://policies.google.com/privacy" rel="nofollow" target="_blank">Google Privacy Policy (covers Google Play, Firebase, Google Sign-In)</a></li>
+  <li><a href="https://firebase.google.com/support/privacy" rel="nofollow" target="_blank">Firebase Privacy and Security</a></li>
   <li><a href="https://www.revenuecat.com/privacy/" rel="nofollow" target="_blank">RevenueCat Privacy Policy</a></li>
   <li><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="nofollow" target="_blank">Unity Game Player and App User Privacy Policy</a></li>
 </ul>
@@ -59,9 +65,14 @@
 
 <p>We keep subscription and transaction records only as long as needed for purchase verification and legal or accounting requirements. Ad data is managed by Unity Ads according to their retention policy. Age verification data is not stored by us – it is processed in real-time through Google Play's API.</p>
 
+<p>Cloud backup data (Firestore <b>users/{uid}</b>) is kept as long as your account exists so sync keeps working. It is permanently deleted when you use <b>Account → delete icon</b> in the App (deletes cloud + login), or when you request deletion by email (see Delete Account page). Guest/local data is removed when you clear app data or uninstall.</p>
+
 <h2 style="text-align: left;">6. Your Choices</h2>
 
 <ul style="text-align: left;">
+  <li>You can use the App as guest without signing in – no account data leaves your device.</li>
+  <li>You can sign out at any time via <b>Account → Sign out</b>. Local data for that account stays on the device; cloud sync stops until you sign in again.</li>
+  <li>You can permanently delete your cloud backup + login via <b>Account → delete icon</b> in the App, or by emailing us (see Delete Account page).</li>
   <li>You can disable personalized ads in your device settings.</li>
   <li>You can delete the App at any time to stop data collection.</li>
   <li>If you request data deletion related to RevenueCat purchases, email us and we will forward the request to RevenueCat.</li>
