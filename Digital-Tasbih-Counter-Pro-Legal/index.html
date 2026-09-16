@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tasbih Counter Pro — by OhMochi</title>
+    <meta name="description" content="Digital Tasbih Counter Pro by OhMochi — professional digital dhikr counter with cloud backup, themes, sounds, and vibration.">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border: #334155;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .container { width: 100%; max-width: 640px; }
+        header { text-align: center; margin-bottom: 32px; }
+        header h1 { font-size: 2rem; margin-bottom: 8px; letter-spacing: -0.025em; }
+        header p { color: var(--text-muted); margin-top: 0; font-size: 0.95rem; }
+        .app-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .app-card h2 { font-size: 1.1rem; margin-top: 0; }
+        .app-card p, .app-card li { font-size: 0.92rem; color: var(--text-main); }
+        .app-card ul { padding-left: 20px; margin: 8px 0; }
+        .muted { color: var(--text-muted); font-size: 0.85rem; }
+        .links-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+        .legal-link {
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 12px 16px; border-radius: 8px;
+            text-decoration: none; color: var(--text-main); font-size: 0.9rem;
+        }
+        .legal-link:hover { background-color: rgba(56, 189, 248, 0.08); border-color: var(--accent); color: var(--accent-hover); }
+        footer { text-align: center; margin-top: 40px; font-size: 0.8rem; color: var(--text-muted); }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>📿 Digital Tasbih Counter Pro</h1>
+        <p>by OhMochi — Professional digital dhikr counter for Android</p>
+    </header>
+
+    <div class="app-card">
+        <h2>About the App</h2>
+        <p>Digital Tasbih Counter Pro is a professional digital dhikr counter that mimics a physical tasbih — casing + digital LCD + ADD / MIN / RES buttons — with click sounds, vibration feedback, and local persistence.</p>
+        <ul>
+            <li>Count dhikr with targets, custom dhikr list management, and archiving</li>
+            <li>Themes, background variants, custom sounds, night mode, and fullscreen counter</li>
+            <li>Works offline as guest; optional Google Sign-In enables cloud backup &amp; sync across your devices</li>
+            <li>Package: <b>com.ohmochi.digital_tasbih_counter_pro</b></li>
+        </ul>
+    </div>
+
+    <div class="app-card">
+        <h2>Why the App Requests Google User Data</h2>
+        <p>When you choose <b>Sign in with Google</b>, the App receives your basic Google profile (name, email address, and profile photo) via Firebase Authentication to identify your account and secure your backup. Your dhikr data (counts, dzikir list, theme, preferences) is stored in Cloud Firestore under <b>users/{uid}</b> solely to restore and sync across your own devices. Guest mode needs no Google data at all.</p>
+        <p class="muted">Scope used: email / profile / openid (sign-in only). Full details are in the Privacy Policy below.</p>
+    </div>
+
+    <div class="app-card">
+        <h2>Legal Documents</h2>
+        <div class="links-grid">
+            <a class="legal-link" href="./privacy-policy.html">
+                <span>Privacy Policy</span><span>➡️</span>
+            </a>
+            <a class="legal-link" href="./terms-of-service.html">
+                <span>Terms of Service</span><span>➡️</span>
+            </a>
+            <a class="legal-link" href="./delete-account.html">
+                <span>Delete Account &amp; Data</span><span>➡️</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="app-card">
+        <h2>Contact</h2>
+        <p>Developer: <b>OhMochi</b><br>Email: <a href="mailto:ohmochisukabumi@gmail.com" style="color: var(--accent);">ohmochisukabumi@gmail.com</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 OhMochi. All rights reserved.<br><a href="https://ohmochi-page.github.io/">OhMochi Console Center</a></p>
+    </footer>
+</div>
+</body>
+</html>
