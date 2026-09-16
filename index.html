@@ -1,14 +1,167 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>OhMochi Page Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OhMochi Developer - Legal & Privacy Center</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 640px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            color: var(--text-muted);
+            margin-top: 0;
+            font-size: 0.95rem;
+        }
+
+        .app-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .app-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .legal-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .legal-link:hover {
+            background-color: rgba(56, 189, 248, 0.08);
+            border-color: var(--accent);
+            color: var(--accent-hover);
+        }
+
+        .arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .legal-link:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+    </style>
 </head>
 <body>
-    <h1>Selamat Datang di OhMochi Page</h1>
-    <p>Silakan kunjungi proyek kami:</p>
-    <ul>
-        <li><a href="/TradeCheck-Pro-Legal/">TradeCheck Pro Legal</a></li>
-        <li><a href="/XAUUSD-Lot-Calculator-Legal/">XAUUSD Lot Calculator Legal</a></li>
-    </ul>
+
+<div class="container">
+    <header>
+        <h1>✨ OhMochi Console Center</h1>
+        <p>Halaman resmi pusat data hukum, privasi, dan ketentuan layanan aplikasi mobile.</p>
+    </header>
+
+    <!-- Aplikasi 1 -->
+    <div class="app-card">
+        <div class="app-title">📊 TradeCheck Pro</div>
+        <div class="links-grid">
+            <a class="legal-link" href="/TradeCheck-Pro-Legal/privacy-policy.html">
+                <span>Kebijakan Privasi (Privacy Policy)</span>
+                <span class="arrow">➡️</span>
+            </a>
+            <a class="legal-link" href="/TradeCheck-Pro-Legal/terms-of-service.html">
+                <span>Ketentuan Layanan (Terms of Service)</span>
+                <span class="arrow">➡️</span>
+            </a>
+            <a class="legal-link" href="/TradeCheck-Pro-Legal/delete-account.html">
+                <span>Penghapusan Data (Delete Account)</span>
+                <span class="arrow">➡️</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Aplikasi 2 -->
+    <div class="app-card">
+        <div class="app-title">📈 XAUUSD Lot Calculator</div>
+        <div class="links-grid">
+            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/privacy-policy.html">
+                <span>Kebijakan Privasi (Privacy Policy)</span>
+                <span class="arrow">➡️</span>
+            </a>
+            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/tos.html">
+                <span>Ketentuan Layanan (Terms of Service)</span>
+                <span class="arrow">➡️</span>
+            </a>
+            <a class="legal-link" href="/XAUUSD-Lot-Calculator-Legal/delete-account.html">
+                <span>Penghapusan Data (Delete Account)</span>
+                <span class="arrow">➡️</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 OhMochi. Semua Hak Dilindungi Undang-Undang.<br>Hubungi kami: ohmochisukabumi@gmail.com</p>
+    </footer>
+</div>
+
 </body>
 </html>
